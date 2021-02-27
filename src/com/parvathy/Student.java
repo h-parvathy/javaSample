@@ -168,11 +168,36 @@ public class Student
 		setTotalMarks(total);
 	}
 
-	public void  calculatePercentage(){
-
+	public float calculatePercentage(){
+		float total = getTotalMarks();
+		setPercentage(total/100);
+		return total/100;
 	}
 
 	public void calculateGrade(){
-
+		float percent = getPercentage();
+		if (percent >=94 && percent<=100)
+			setGrade("A+");
+		else if (percent >=87 && percent<=93)
+			setGrade("A");
+		else if (percent >=80 && percent<=86)
+			setGrade("A-");
+		else if (percent >=77 && percent<=79)
+			setGrade("B+");
+		else if (percent >=73 && percent<=76)
+			setGrade("B");
+		else if (percent >=70 && percent<=72)
+			setGrade("B-");
+		else if (percent >=67 && percent<=69)
+			setGrade("C+");
+		else if (percent >=63 && percent<=66)
+			setGrade("C");
+		else if (percent >=60 && percent<=62)
+			setGrade("C-");
+		else if (percent >=50 && percent<=59)
+			setGrade("D");
+		else
+			setGrade("F");
 	}
+
 }
